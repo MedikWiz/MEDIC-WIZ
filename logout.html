@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logging Out...</title>
+    <script>
+        // Clear user data from localStorage
+        localStorage.removeItem("username");
+        localStorage.removeItem("email");
+
+        // Redirect to signup page after a short delay
+        setTimeout(() => {
+            window.location.href = "signup.html";
+        }, 1500); // 1.5 seconds delay for better UX
+    </script>
+</head>
+
+<body>
+    <h2>Logging out...</h2>
+    <p>You will be redirected shortly.</p>
+</body>
+
+</html>

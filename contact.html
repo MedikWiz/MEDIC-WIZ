@@ -1,87 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="/src/output.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+    <title>Contact Us - GreenCycle Recycling</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
-<body>
-    <section class="contact bg-white">
-        <h2 class="text-center text-3xl font-semibold text-black pt-10 font-verdana mb-4">Contact Us</h2>
-        <div class="bg-cover bg-no-repeat bg-gray-100 py-12 md:flex justify-around" style="background-image: url(background\ image\ 3.png);">
-            <div class="bg-green-900 text-white p-6 rounded-lg m-6 w-96">
-                <div class="flex space-x-10 mb-6">
-                    <p class=" rounded-full h-10 w-10 flex justify-center pt-10">
-                        <i class="fas fa-location-dot text-2xl "></i>
-                    </p>
-                    <div>
-                        <a href="background image 3.png" class="text-white hover:underline font-verdana">
-                            <h3 class="text-xl">Address:</h3>
-                            <p>Learn Factory</p>
-                            <p>44B Aba Owerri Road, Aba, Abia State</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="flex space-x-10 text-sm mb-6">
-                    <p class="flex justify-center">
-                        <i class="fas fa-phone text-2xl w-10 mt-1">
 
-                        </i></p>
-                    <div >
-                        <a href="+2347040419912" class="hover:underline text-white font-verdana">
-                            <h3 class="text-xl">Call us:</h3>
-                            <p>+2347040419912</p>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="flex space-x-10 text-sm">
-                    <p class="w-10 flex justify-center">
-                        <i class="fas fa-envelope text-2xl mt-1"></i> 
-                    </p>
-                    <div >
-                        <a href="mailto:info@wastestack.com" class="hover:underline text-white font-verdana">
-                            <h3 class="text-xl">Write us:</h3>
-                            <p>info@learnfactory.com.ng</p>
-                        </a>
-                    </div>
-                </div>
+<body class="bg-green-50">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-green-600 text-white py-4 px-6 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">GreenCycle Recycling</h1>
+        <div class="space-x-6">
+            <a href="homepage.html" class="hover:text-gray-300">Home</a>
+            <a href="services.html" class="hover:text-gray-300">Services</a>
+            <a href="aboutus.html" class="hover:text-gray-300">About Us</a>
+            <a href="contactus.html" class="font-semibold border-b-2 border-white">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Contact Us Section -->
+    <section class="container mx-auto py-16 px-6" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-green-700 text-center">Contact Us</h2>
+
+        <div class="grid md:grid-cols-2 gap-8 mt-8">
+
+            <!-- Contact Details -->
+            <div class="bg-white shadow-lg p-6 rounded-lg">
+                <h3 class="text-2xl font-semibold text-green-700">Address:</h3>
+                <p class="text-gray-600">Learn Factory</p>
+                <p class="text-gray-600">44B Aba Owerri Road, Aba, Abia State</p>
+
+                <h3 class="text-2xl font-semibold text-green-700 mt-6">Call Us:</h3>
+                <p class="text-gray-600">+2347040419912</p>
+
+                <h3 class="text-2xl font-semibold text-green-700 mt-6">Write Us:</h3>
+                <p class="text-gray-600">info@learnfactory.com.ng</p>
             </div>
-            <div class="bg-gray-300 p-6 rounded-lg w-96 ml-6 shadow-lg">
-                <h3 class="text-xl font-bold">Send A Message</h3>
-                <input type="text" placeholder="Your Name" class="w-full p-2 border rounded mt-2 font-semibold">
-                <input type="email" placeholder="Your Email" class="w-full p-2 border rounded mt-2 font-semibold">
-                <textarea placeholder="Message" class="w-full p-2 border rounded mt-2 font-semibold"></textarea>
-                <button class="bg-green-900 text-white p-2 w-full rounded mt-2">Submit</button>
+
+            <!-- Contact Form -->
+            <div class="bg-white shadow-lg p-6 rounded-lg">
+                <h3 class="text-2xl font-semibold text-green-700">Send A Message</h3>
+                <form class="mt-4">
+                    <input type="text" placeholder="Your Name"
+                        class="w-full p-3 border border-gray-300 rounded-md mt-3 focus:outline-green-500">
+                    <input type="email" placeholder="Your Email"
+                        class="w-full p-3 border border-gray-300 rounded-md mt-3 focus:outline-green-500">
+                    <textarea placeholder="Your Message"
+                        class="w-full p-3 border border-gray-300 rounded-md mt-3 focus:outline-green-500"></textarea>
+                    <button type="submit"
+                        class="w-full bg-green-600 text-white py-3 rounded-md font-bold mt-4 hover:bg-green-700 transition">Submit</button>
+                </form>
             </div>
+
         </div>
     </section>
-    <footer class="bg-green-900 text-white py-8">
-        <h2 class="text-2xl font-bold text-center">Waste</h2>
-        <p class="mt-2 max-w-2xl mx-auto text-center text-sm pb-6 px-3">Waste refers to any materials, substances, or 
-            products that are discarded,
-            no longe useful or unwanted. It can come in various forms, including solid, liquid and gaseous waste, and 
-            can be generated from household, industries, agriculture and other human activities. Proper waste 
-            management is essential to minimize environmental impact, reduce pollution and conserve resources. 
-            Recycling, reusing, and reducing waste are key practices in sustainable living, aiming to create a
-            circular economy where materials are reused rather than discarded.
 
+    <!-- Waste Information -->
+    <section class="container mx-auto py-16 px-6 bg-white shadow-md rounded-md" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-green-700">Waste</h2>
+        <p class="text-gray-600 mt-3 leading-relaxed">
+            Waste refers to any materials, substances, or products that are discarded, no longer useful, or unwanted.
+            It can come in various forms, including solid, liquid, and gaseous waste, and can be generated from
+            households, industries, agriculture, and other human activities.
+            Proper waste management is essential to minimize environmental impact, reduce pollution, and conserve
+            resources.
+            Recycling, reusing, and reducing waste are key practices in sustainable living, aiming to create a circular
+            economy where materials are reused rather than discarded.
         </p>
-        <hr>
-        <hr>
-        <div class="flex justify-around md:space-x-6 mt-4 pb-6 md:text-sm text-white">
-            <a href="homepage.html" class="hover:text-gray-300">Home</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-700 text-white text-center py-6 mt-10">
+        <div class="flex justify-center space-x-6">
+            <a href="index.html" class="hover:text-gray-300">Home</a>
             <a href="aboutus.html" class="hover:text-gray-300">About Us</a>
-            <a href="#" class="hover:text-gray-300">Services</a>
+            <a href="services.html" class="hover:text-gray-300">Services</a>
             <a href="clientreview.html" class="hover:text-gray-300">Review</a>
-            <a href="contact.html" class="hover:text-gray-300">Contact Us</a>
-            <a href="signup.html" class="hover:text-gray-300">Sign up</a>
+            <a href="contactus.html" class="hover:text-gray-300">Contact Us</a>
+            <a href="signup.html" class="hover:text-gray-300">Sign Up</a>
         </div>
-        <hr>
+
+        <!-- Social Media Icons -->
+        <div class="flex justify-center mt-4 space-x-4">
+            <a href="https://www.facebook.com" target="_blank" class="text-white hover:text-gray-300 text-xl">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" class="text-white hover:text-gray-300 text-xl">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" class="text-white hover:text-gray-300 text-xl">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" class="text-white hover:text-gray-300 text-xl">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://wa.me/2347040419912" target="_blank" class="text-white hover:text-gray-300 text-xl">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+
+        <p class="mt-4">© 2025 GreenCycle Recycling. All Rights Reserved.</p>
     </footer>
 
-    
+    <!-- AOS Animation Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,  // Animation duration in milliseconds
+            once: true,  // Animation happens only once
+        });
+    </script>
+
 </body>
+
 </html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+</head>
+
+<body>
+    <h2>Welcome, <span id="displayUsername"></span>!</h2>
+    <p>Your email: <span id="displayEmail"></span></p>
+
+    <button onclick="logout()">Logout</button>
+    
+    <script>
+        function logout() {
+            window.location.href = "homepage.html"; // Redirect to logout page
+        }
+    </script>
+
+
+    <script>
+        // Retrieve user data from localStorage
+        let username = localStorage.getItem("username");
+        let email = localStorage.getItem("email");
+
+        // Display the data
+        document.getElementById("displayUsername").textContent = username || "Guest";
+        document.getElementById("displayEmail").textContent = email || "Not provided";
+    </script>
+</body>
+
+</html>

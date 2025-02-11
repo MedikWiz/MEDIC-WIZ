@@ -1,51 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 </head>
-<body class="flex items-center justify-center min-h-screen bg-white">
 
-    <div class="w-full max-w-md text-center">
+<body class="flex items-center justify-center flex-col min-h-screen h-[100vh] bg-white">
+    <nav class="flex space-x-6 text-2xl justify-around bg-green-500 font-bold font-verdana p-10">
+        <!-- <a href="#" class="hover:text-white">HOME</a> -->
+        <a href="homepage.html" class="hover:text-white">Home</a>
+        <a href="#" class="hover:text-white">Services</a>
+        <a href="aboutus.html" class="hover:text-white">About Us</a>
+        <a href="contact.html" class="hover:text-white">Contact Us</a>
+    </nav>
+
+    <div class="w-full max-w-md text-center mt-24">
         <h2 class="text-xl font-semibold text-green-600">Log In</h2>
 
-      <!--  <div class="flex justify-center space-x-4 mt-4">
-            <button class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-400 text-gray-600">
-                <span class="text-lg font-semibold">f</span>
-            </button>
-            <button class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-400 text-gray-600">
-                <span class="text-lg font-semibold">G+</span>
-            </button>
-            <button class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-400 text-gray-600">
-                <span class="text-lg font-semibold">in</span>
-            </button>
-        </div> -->
-
-       <!-- <p class="text-gray-600 mt-4">or use your email for verification</p> -->
-
-        <form class="mt-6 space-y-4">
+        <form class="mt-6 space-y-4" id="loginForm">
             <div class="flex items-center bg-green-100 p-3 space-x-4 rounded-md">
                 <i class="fas fa-user"></i>
-                <input type="text" placeholder="Username" class="w-full bg-transparent outline-none text-gray-700">
+                <input id="username" type="text" placeholder="Username"
+                    class="w-full bg-transparent outline-none text-gray-700">
             </div>
-           <!-- <div class="flex items-center bg-green-100 p-3 rounded-md">
-                <span class="text-gray-600 text-lg mr-2">📧</span>
-                <input type="email" placeholder="Email" class="w-full bg-transparent outline-none text-gray-700">
-            </div> -->
 
             <div class="flex items-center bg-green-100 p-3 rounded-md">
-                <input type="password" placeholder="Password" class="w-full bg-transparent outline-none text-gray-700">
-                 <i class="fas fa-eye"></i>
+                <input id="password" type="password" placeholder="Password"
+                    class="w-full bg-transparent outline-none text-gray-700">
+                <i class="fas fa-eye cursor-pointer" id="togglePassword"></i>
             </div>
-            <button class="w-full bg-green-500 text-white py-3 rounded-full font-bold mt-4">
+
+            <button type="submit" class="w-full bg-green-500 text-white py-3 rounded-full font-bold mt-4">
                 SIGN IN
             </button>
-           <p>Don't have an account? <a class="text-green-500 hover:underline" href="signup.html">Create Account</a> </p>
+
+            <p>Don't have an account? <a class="text-green-500 hover:underline" href="signup.html">Create Account</a>
+            </p>
         </form>
     </div>
 
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            const credentials = { username, password };
+
+            try {
+                const res = await fetch("http://localhost:5000/api/users/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(credentials),
+                });
+
+                const data = await res.json();
+                if (res.ok) {
+                    localStorage.setItem("token", data.token);
+                    localStorage.setItem("userId", data.user._id);
+                    alert("Login successful!");
+                    window.location.href = "account.html";
+                } else {
+                    alert(data.message);
+                }
+            } catch (error) {
+                console.error("Login failed:", error);
+                alert("An error occurred. Please try again.");
+            }
+        });
+
+        // Password toggle functionality
+        document.getElementById("togglePassword").addEventListener("click", function () {
+            const passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                this.classList.replace("fa-eye", "fa-eye-slash");
+            } else {
+                passwordField.type = "password";
+                this.classList.replace("fa-eye-slash", "fa-eye");
+            }
+        });
+    </script>
+
+    <div class="flex bg-green-600 justify-between mt-[160px] w-full items-center p-10 my-10 md:space-x-6 pb-6 text-white">
+        <a href="aboutus.html" class="hover:text-gray-300">About Us</a>
+        <a href="#" class="hover:text-gray-300">Services</a>
+        <a href="clientreview.html" class="hover:text-gray-300">Review</a>
+        <a href="contact.html" class="hover:text-gray-300">Contact Us</a>
+        <a href="signup.html" class="hover:text-gray-300">Sign up</a>
+    </div>
+
 </body>
+
 </html>
